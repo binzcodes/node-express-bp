@@ -1,0 +1,51 @@
+{
+  "name": "thin-node-ts-boilerplate",
+  "version": "0.0.0",
+  "description": "A thin Node Express Typescript boilerplate with Docker",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "files": [
+    "dist/src"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [],
+  "scripts": {
+    "start": "node ./dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:coverage": "echo \"Error: no test specified\" && exit 1",
+    "lint": "gts lint",
+    "lint:fix": "gts fix",
+    "clean": "gts clean",
+    "compile": "tsc",
+    "prepare": "npm run compile && husky install",
+    "pretest": "npm run compile",
+    "posttest": "npm run lint"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.11.2",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb-base-typescript-prettier": "^4.1.0",
+    "eslint-config-airbnb-typescript-prettier": "^4.2.0",
+    "gts": "^3.1.0",
+    "husky": "^6.0.0",
+    "prettier": "^2.2.1",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "http-status": "^1.5.0",
+    "winston": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint:fix"
+    }
+  }
+}
