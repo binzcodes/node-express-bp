@@ -32,7 +32,7 @@
     "eslint-config-airbnb-typescript-prettier": "^4.2.0",
     "gts": "^3.1.1",
     "husky": "^8.0.2",
-    "prettier": "^2.2.1",
+    "prettier": "^2.8.0",
     "ts-node-dev": "^1.1.6",
     "typescript": "^4.8.4"
   },
