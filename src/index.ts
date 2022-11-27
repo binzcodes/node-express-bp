@@ -1,12 +1,10 @@
-import express from 'express';
+import server from './server';
 
-const app = express();
+const PORT = 3000;
 
-app.get('/_health', (req, res) => res.send());
-
-app.get('/', (req, res) => res.send('Hello World!'));
-
-app.listen(3000, () => {
+server.listen(PORT, () => {
   // eslint-disable-next-line no-console
-  console.log('App listening on port 3000!');
+  console.log(
+    `⚡️ [server]: Server is running at https://localhost:${PORT} ⚡️`
+  );
 });
